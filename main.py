@@ -7,9 +7,9 @@ if __name__ == "__main__":
     imgGet = ImageGetter()
     imgAnalyzer = ImageAnalyzer()
     weibo = WeiboPoster()
-    weibo.postWeibo("Hello World Again")
-    #imgData = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
+    #weibo.postWeibo("Hello World Again")
+    imgData = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
     #print imgData
-    #imgAnalyzer.openImage(imgData)
+    imgAnalyzer.openImage(imgData)
 
     
