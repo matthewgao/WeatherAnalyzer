@@ -7,8 +7,11 @@ class ImageAnalyzer:
 
     def openImage(self, img_buffer):
         img = Image.open(img_buffer)
-        img = img.convert('L')
+        img = img.convert('RGB')
         img = img.crop((235,185,330,274))
-        img.save('d:\\ab1.jpg')
-        img.show()
+        img.save('d:\\ab1.bmp')
+
+        return img
+        #imshow(img)
+        #img.show()
         
