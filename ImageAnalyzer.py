@@ -1,4 +1,3 @@
-#import PIL from Image
 from PIL import Image
 from pylab import *
 
@@ -10,9 +9,8 @@ class ImageAnalyzer:
     def openImage(self,img_buffer):
         return Image.open(img_buffer)
 
-
     def cropImage(self, img):
-        #img = Image.open(img_buffer)
+
         img = img.convert('RGB')
         if self.region == (0,0,0,0):
             print "Please set the region."
@@ -21,17 +19,13 @@ class ImageAnalyzer:
         print filename
         img.save(filename)
         self.filename = self.filename + 1
-
         return img
-        #imshow(img)
-        #img.show()
         
     def setRegion(self, region):
         self.region = region
 
     def imgAver(self,img):
         
-
         r = img[:,:,0]
         g = img[:,:,1]
         b = img[:,:,2]
@@ -64,7 +58,6 @@ class ImageAnalyzer:
 
     def analysisImage(self,img):
         im = array(img)
-
         (rAver,gAver,bAver) = self.imgAver(im)
 
         print "rAver:" +str(rAver)

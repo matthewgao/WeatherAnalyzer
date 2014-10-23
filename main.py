@@ -9,7 +9,6 @@ if __name__ == "__main__":
     imgGet = ImageGetter()
     imgAnalyzer = ImageAnalyzer()
     weibo = WeiboPoster()
-    #weibo.postWeibo("Hello World Again")
     
     while True:
         try:
