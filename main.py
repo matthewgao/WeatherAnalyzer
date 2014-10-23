@@ -1,6 +1,7 @@
 from ImageGetter import *
 from ImageAnalyzer import *
 from WeiboPoster import *
+import time
 
 if __name__ == "__main__":
     
@@ -8,8 +9,24 @@ if __name__ == "__main__":
     imgAnalyzer = ImageAnalyzer()
     weibo = WeiboPoster()
     #weibo.postWeibo("Hello World Again")
-    imgData = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
-    #print imgData
-    imgAnalyzer.openImage(imgData)
-
     
+    while True:
+        try:
+    
+            imgDataString = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
+
+            imgData = imgAnalyzer.openImage(imgDataString)
+            imgAnalyzer.setRegion((235,185,330,274))
+            croppedImg = imgAnalyzer.cropImage(imgData)
+
+            imgAnalyzer.setRegion((37,32,46,37))
+            croppedImg2 = imgAnalyzer.cropImage(croppedImg)
+
+            result = imgAnalyzer.analysisImage(croppedImg2)
+            print "Check result: " + result
+            time.sleep(600)
+    
+        except Exception , e:
+            print Exception,":",e
+            continue
+   

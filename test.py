@@ -2,19 +2,38 @@ from PIL import Image
 import os
 from pylab import *
 
-im = array(Image.open('all.bmp').convert('L'))
+im = array(Image.open('ab1.bmp').convert('RGB'))
 imc = array(Image.open('Shanghai_calbirate.bmp'))
 print im.shape, im.dtype
 
-im2 = 255 - im 
-
-im3 = (100.0/255) * im + 100 
-
-im4 = 255.0 * (im/255.0)**2
-pil_im = Image.fromarray(uint8(im4))
-pil_im.save("test.bmp")
-imshow(im4)
+r = im[:,:,0]
+g = im[:,:,1]
+b = im[:,:,2]
+figure()
+imshow(r)
 show()
+figure()
+imshow(g)
+show()
+figure()
+imshow(b)
+show()
+
+print r
+print g
+print b
+(height,weight) = r.shape
+r[4,8] =11
+sumAll = 0
+for i in range(0,height):
+    for j in range(0,weight):
+        sumAll = sumAll + r[i,j]
+average = sumAll/(height*weight)
+print sumAll
+print average
+#pil_im = Image.fromarray(uint8(im4))
+#pil_im.save("test.bmp")
+
 '''
 imshow(im)
 show()
@@ -29,15 +48,7 @@ show()
 print i[:,:,0]
 print i[:,:,1]
 print i[:,:,2]
-figure()
-imshow(im[:,:,0])
-show()
-figure()
-imshow(im[:,:,1])
-show()
-figure()
-imshow(im[:,:,2])
-show()
+
 '''
 #figure()
 #hist(im.flatten(),128)

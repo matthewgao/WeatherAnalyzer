@@ -9,7 +9,7 @@ class WeiboPoster:
         self.AUTH_URL = 'https://api.weibo.com/oauth2/authorize'
         self.client = APIClient(app_key=self.APP_KEY, app_secret=self.APP_SECRET, redirect_uri=self.CALLBACK_URL)
         url = self.client.get_authorize_url()
-        print url    
+        #print url    
         #code = raw_input('Enter code >')
         postdata = {
             "action": "login",
