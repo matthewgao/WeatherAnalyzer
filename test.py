@@ -2,7 +2,7 @@ from PIL import Image
 import os
 from pylab import *
 
-im = array(Image.open('ab1.bmp').convert('RGB'))
+im = array(Image.open('115.bmp').convert('RGB'))
 imc = array(Image.open('Shanghai_calbirate.bmp'))
 print im.shape, im.dtype
 
@@ -23,16 +23,24 @@ print r
 print g
 print b
 (height,weight) = r.shape
-r[4,8] =11
+#r[4,8] =11
 sumAll = 0
 for i in range(0,height):
     for j in range(0,weight):
-        sumAll = sumAll + r[i,j]
-average = sumAll/(height*weight)
+        if (r[i,j] == 218 and r[i,j] == g[i,j]) \
+            or ((r[i,j]==0 and g[i,j]==0 and b[i,j]==170)) \
+            or ((r[i,j]==0 and g[i,j]==0 and b[i,j]==85)) \
+            or ((r[i,j]==36 and g[i,j]==72 and b[i,j]==85))\
+            or ((r[i,j]==36 and g[i,j]==109 and b[i,j]==85))\
+            or ((r[i,j]==0 and g[i,j]==145 and b[i,j]==255))\
+            or ((r[i,j]==36 and g[i,j]==109 and b[i,j]==170)):
+            im[i,j,0]=im[i,j,1]=im[i,j,2]=0
+            continue
+        
 print sumAll
 print average
-#pil_im = Image.fromarray(uint8(im4))
-#pil_im.save("test.bmp")
+pil_im = Image.fromarray(uint8(im))
+pil_im.save("test.bmp")
 
 '''
 imshow(im)

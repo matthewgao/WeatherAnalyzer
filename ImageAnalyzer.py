@@ -43,13 +43,20 @@ class ImageAnalyzer:
         skipCount = 0
         for i in range(0,height):
             for j in range(0,weight):
-                if r[i,j] == 218 and r[i,j] == g[i,j]:
+                if (r[i,j] == 218 and r[i,j] == g[i,j]) \
+                   or ((r[i,j]==0 and g[i,j]==0 and b[i,j]==170)) \
+                   or ((r[i,j]==0 and g[i,j]==0 and b[i,j]==85)) \
+                   or ((r[i,j]==36 and g[i,j]==72 and b[i,j]==85))\
+                   or ((r[i,j]==36 and g[i,j]==109 and b[i,j]==85))\
+                   or ((r[i,j]==0 and g[i,j]==145 and b[i,j]==255))\
+                   or ((r[i,j]==36 and g[i,j]==109 and b[i,j]==170)):
                     skipCount = skipCount + 1
                     continue
                 sumR = sumR + r[i,j]
                 sumG = sumG + g[i,j]
                 sumB = sumB + b[i,j]
-
+        if ((height*weight)-skipCount) == 0:
+            return (0,0,0)
         rAver = sumR/((height*weight)-skipCount)
         gAver = sumG/((height*weight)-skipCount)
         bAver = sumB/((height*weight)-skipCount)
@@ -64,13 +71,16 @@ class ImageAnalyzer:
         print "gAver:" +str(gAver)
         print "bAver:" +str(bAver) 
 
+        if rAver ==0 and gAver ==0 and bAver ==0:
+            return "Clear"
+        
         if bAver < 10 and rAver >= 2:
-            return "big"
+            return "Raining"
 
         if rAver < 10 and bAver >= 2:
-            return "clear"
+            return "Clear"
 
-        return "possible"
+        return "Cloudy"
 
 
 
