@@ -20,4 +20,4 @@ site-packages\scipy\lib 目录下的三个文件
 six.py
 six.pyo
 six.pyc
-复制到site-packages目录下就可以了。
+Copy到site-packages目录下就可以了。
