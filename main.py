@@ -8,7 +8,7 @@ if __name__ == "__main__":
     status = "Clear"
     imgGet = ImageGetter()
     imgAnalyzer = ImageAnalyzer()
-    weibo = WeiboPoster()
+    
     
     while True:
         try:
@@ -27,6 +27,7 @@ if __name__ == "__main__":
                 string = "#AutoWeatherPoster# "
                 string = string + "The weather at Jiangqiao is " + status
                 string = string + ", Right Now"
+                weibo = WeiboPoster()
                 weibo.postWeibo(string)
                 status = result
                 
