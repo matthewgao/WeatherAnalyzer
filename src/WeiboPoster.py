@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__version__ = '0.2'
+__author__ = 'Matthew (matthewgao@gmail.com)'
+
 from weibo import APIClient
 import urllib2,urllib
 
@@ -7,7 +13,11 @@ class WeiboPoster:
         self.APP_SECRET = 'bd036add6f75fe4714c935a4f94443dd'
         self.CALLBACK_URL = 'https://api.weibo.com/oauth2/default.html'
         self.AUTH_URL = 'https://api.weibo.com/oauth2/authorize'
-        self.client = APIClient(app_key=self.APP_KEY, app_secret=self.APP_SECRET, redirect_uri=self.CALLBACK_URL)
+
+        self.client = APIClient(app_key=self.APP_KEY, \
+                                app_secret=self.APP_SECRET, \
+                                redirect_uri=self.CALLBACK_URL)
+        
         url = self.client.get_authorize_url()
 
         postdata = {

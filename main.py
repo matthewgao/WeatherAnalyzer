@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__version__ = '0.2'
+__author__ = 'Matthew (matthewgao@gmail.com)'
+
 from src.ImageGetter import *
 from src.ImageAnalyzer import *
 from src.WeiboPoster import *
@@ -12,8 +18,8 @@ if __name__ == "__main__":
     
     while True:
         try:
-            imgDataString = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
-            imgData = imgAnalyzer.openImage(imgDataString)
+            imgData = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
+
             imgAnalyzer.setRegion((235,185,330,274))
             croppedImg = imgAnalyzer.cropImage(imgData)
 

@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__version__ = '0.2'
+__author__ = 'Matthew (matthewgao@gmail.com)'
+
 from PIL import Image
 from pylab import *
 
@@ -5,9 +11,6 @@ class ImageAnalyzer:
     def __init__(self):
         self.region = (0,0,0,0)
         self.filename = 1
-
-    def openImage(self,img_buffer):
-        return Image.open(img_buffer)
 
     def cropImage(self, img):
 
