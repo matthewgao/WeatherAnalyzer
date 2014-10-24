@@ -1,6 +1,6 @@
-from ImageGetter import *
-from ImageAnalyzer import *
-from WeiboPoster import *
+from src.ImageGetter import *
+from src.ImageAnalyzer import *
+from src.WeiboPoster import *
 import time
 
 if __name__ == "__main__":
