@@ -24,8 +24,8 @@ class WeiboPoster:
             "action": "login",
             "client_id": self.APP_KEY,
             "redirect_uri":self.CALLBACK_URL,
-            "userId": "matthewgao@163.com",
-            "passwd": "gs198664",
+            "userId": "username",
+            "passwd": "password",
             }
 
         headers = {
