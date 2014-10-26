@@ -22,4 +22,6 @@ six.pyo
 six.pyc
 Copy到site-packages目录下就可以了。
 
-abcde v0.2
+
+abcdeyyyyyyyyy v0.2
+
