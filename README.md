@@ -1,23 +1,24 @@
 WeatherAnalyzer v0.1
 ===============
 ## Introduce
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/matthewgao/WeatherAnalyzer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 This tools is used to anaylsis the radar image which comes from NMC, we can report where is going to rain, and send a weibo and SMS to somebody who care about it.
 
 ## Dependence
 
-* numpy£ºhttp://sourceforge.net/projects/numpy/files/NumPy/1.7.0/
-* matplotlab£ºhttp://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.1.1/
-* scipy£ºhttp://sourceforge.net/projects/scipy/files/scipy/0.12.0/
+* numpyï¿½ï¿½http://sourceforge.net/projects/numpy/files/NumPy/1.7.0/
+* matplotlabï¿½ï¿½http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.1.1/
+* scipyï¿½ï¿½http://sourceforge.net/projects/scipy/files/scipy/0.12.0/
 * PIL
 * pyparsing http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyparsing
 * datautil http://www.lfd.uci.edu/~gohlke/pythonlibs/#python-dateutil
 * six http://www.lfd.uci.edu/~gohlke/pythonlibs/#six
 
 ## Issue
-if you meet this ¡°No module named six¡±
+if you meet this ï¿½ï¿½No module named sixï¿½ï¿½
 
-site-packages\scipy\lib Ä¿Â¼ÏÂµÄÈý¸öÎÄ¼þ
+site-packages\scipy\lib Ä¿Â¼ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 six.py
 six.pyo
 six.pyc
-¸´ÖÆµ½site-packagesÄ¿Â¼ÏÂ¾Í¿ÉÒÔÁË¡£
+ï¿½ï¿½ï¿½Æµï¿½site-packagesÄ¿Â¼ï¿½Â¾Í¿ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½
