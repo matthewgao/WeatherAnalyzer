@@ -15,7 +15,6 @@ if __name__ == "__main__":
     imgGet = ImageGetter()
     imgAnalyzer = ImageAnalyzer()
     
-    
     while True:
         try:
             imgData = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
@@ -34,7 +33,8 @@ if __name__ == "__main__":
                 string = string + "The weather at Jiangqiao is " + status
                 string = string + ", Right Now"
                 weibo = WeiboPoster()
-                weibo.postWeibo(string)
+                #weibo.postWeibo(string)
+                weibo.postWeiboWithImage(string,imgGet.convertTobBinaryFileStream(imgData,"jpg"))
                 status = result
                 
             time.sleep(600)

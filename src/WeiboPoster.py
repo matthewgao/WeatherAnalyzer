@@ -50,3 +50,12 @@ class WeiboPoster:
         utext = unicode(text, "UTF-8")
         self.client.statuses.update.post(status=utext)
         
+    def postWeiboWithImage(self,text,img):
+        utext = unicode(text, "UTF-8")
+        self.client.statuses.upload.post(status=utext,pic=img)
+
+    '''
+    def postWeiboWithImageAndPos(self,text,img,lat,long):
+        utext = unicode(text, "UTF-8")
+        self.client.statuses.update.post(status=utext,pic=img,)
+    '''

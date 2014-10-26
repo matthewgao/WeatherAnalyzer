@@ -1,11 +1,17 @@
 from PIL import Image
 import os
 from pylab import *
+from src.WeiboPoster import *
+from src.ImageGetter import *
 
-im = array(Image.open('115.bmp').convert('RGB'))
-imc = array(Image.open('Shanghai_calbirate.bmp'))
+im = array(Image.open('radar_image\\115.bmp').convert('RGB'))
+#imc = array(Image.open('radar_image\Shanghai_calbirate.bmp'))
 print im.shape, im.dtype
-
+weibo = WeiboPoster()
+pil_im = Image.fromarray(uint8(im))
+pil_im.save("test.jpg")
+imgGet = ImageGetter()
+weibo.postWeiboWithImage("test with a pic",imgGet.convertTobBinaryFileStream(pil_im,"jpg"))
 r = im[:,:,0]
 g = im[:,:,1]
 b = im[:,:,2]
