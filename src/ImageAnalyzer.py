@@ -70,7 +70,7 @@ class ImageAnalyzer:
         if rAver ==0 and gAver ==0 and bAver ==0:
             return "Clear"
         
-        if bAver < 10 and rAver >= 2:
+        if bAver < 10 and rAver >= 6:
             return "Raining"
 
         if rAver < 10 and bAver >= 2:

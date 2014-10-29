@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
             if status != result:
                 string = "#AutoWeatherPoster# "
-                string = string + "The weather at Jiangqiao is " + status
+                string = string + "The weather at Jiangqiao is " + result
                 string = string + ", Right Now"
                 weibo = WeiboPoster()
                 #weibo.postWeibo(string)

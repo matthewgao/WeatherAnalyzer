@@ -17,7 +17,7 @@ class ImageGetter:
         print imgurl[0]
         data = urllib.urlopen(imgurl[0]).read()
         img_buffer = StringIO.StringIO(data)
-        return Image.open(img_buffer)
+        return Image.open(img_buffer).convert('RGB')
 
     def convertTobBinaryFileStream(self,img,filetype):
         filename = "radar_image\\tmp."+filetype
