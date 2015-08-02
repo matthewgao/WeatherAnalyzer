@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python2.7
 # -*- coding: utf-8 -*-
 
-__version__ = '0.2'
+__version__ = '0.3'
 __author__ = 'Matthew (matthewgao@gmail.com)'
 
 from src.ImageGetter import *
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     
     while True:
         try:
-            imgData = imgGet.getRadarImg("http://www.nmc.gov.cn/publish/radar/qingpu.htm")
+            imgData = imgGet.getRadarImg("http://www.nmc.cn/publish/radar/qingpu.html")
 
             imgAnalyzer.setRegion((235,185,330,274))
             croppedImg = imgAnalyzer.cropImage(imgData)
@@ -26,7 +26,7 @@ if __name__ == "__main__":
             croppedImg2 = imgAnalyzer.cropImage(croppedImg)
 
             result = imgAnalyzer.analysisImage(croppedImg2)
-            print "Check result: " + result
+            print ("Check result: " + result)
 
             if status != result:
                 string = "#AutoWeatherPoster# "
@@ -40,6 +40,6 @@ if __name__ == "__main__":
             time.sleep(600)
     
         except Exception , e:
-            print Exception,":",e
+            print (Exception,":",e)
             continue
    
