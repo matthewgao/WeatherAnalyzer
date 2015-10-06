@@ -19,7 +19,7 @@ class ImageGetter:
         img_buffer = StringIO.StringIO(data)
         return Image.open(img_buffer).convert('RGB')
 
-    def convertTobBinaryFileStream(self,img,filetype):
+    def convert_to_binary_file_stream(self,img,filetype):
         filename = "radar_image\\tmp."+filetype
         img.save(filename)
         return open(filename,'rb')
