@@ -12,7 +12,7 @@ class ImageAnalyzer:
         self.region = (0,0,0,0)
         self.filename = 1
 
-    def cropImage(self, img):
+    def crop_image(self, img):
 
         img = img.convert('RGB')
         if self.region == (0,0,0,0):
@@ -24,10 +24,10 @@ class ImageAnalyzer:
         self.filename = self.filename + 1
         return img
         
-    def setRegion(self, region):
+    def set_region(self, region):
         self.region = region
 
-    def imgAver(self,img):
+    def img_aver(self,img):
         
         r = img[:,:,0]
         g = img[:,:,1]
@@ -59,9 +59,9 @@ class ImageAnalyzer:
         bAver = sumB/((height*weight)-skipCount)
         return (rAver,gAver,bAver)
 
-    def analysisImage(self,img):
+    def analysis_image(self,img):
         im = array(img)
-        (rAver,gAver,bAver) = self.imgAver(im)
+        (rAver,gAver,bAver) = self.img_aver(im)
 
         print "rAver:" +str(rAver)
         print "gAver:" +str(gAver)

@@ -11,7 +11,7 @@ weibo = WeiboPoster()
 pil_im = Image.fromarray(uint8(im))
 pil_im.save("test.jpg")
 imgGet = ImageGetter()
-weibo.postWeiboWithImage("test with a pic",imgGet.convertTobBinaryFileStream(pil_im,"jpg"))
+weibo.post_weibo_with_image("test with a pic",imgGet.convert_to_binary_file_stream(pil_im,"jpg"))
 r = im[:,:,0]
 g = im[:,:,1]
 b = im[:,:,2]

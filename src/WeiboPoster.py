@@ -33,11 +33,13 @@ class WeiboPoster:
             "Referer":url,
             "Connection":"keep-alive"
         }
+
         req  = urllib2.Request(
             url = self.AUTH_URL,
             data = urllib.urlencode(postdata),
             headers = headers
         )
+        
         resp = urllib2.urlopen(req)
         code = resp.geturl()[-32:]
         
@@ -46,11 +48,11 @@ class WeiboPoster:
         expires_in = r.expires_in
         self.client.set_access_token(access_token, expires_in)
 
-    def postWeibo(self,text):
+    def post_weibo(self,text):
         utext = unicode(text, "UTF-8")
         self.client.statuses.update.post(status=utext)
         
-    def postWeiboWithImage(self,text,img):
+    def post_weibo_with_image(self,text,img):
         utext = unicode(text, "UTF-8")
         self.client.statuses.upload.post(status=utext,pic=img)
 

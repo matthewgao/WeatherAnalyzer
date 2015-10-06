@@ -12,20 +12,20 @@ import time
 if __name__ == "__main__":
 
     status = "Clear"
-    imgGet = ImageGetter()
-    imgAnalyzer = ImageAnalyzer()
+    img_get = ImageGetter()
+    img_analyzer = ImageAnalyzer()
     
     while True:
         try:
-            imgData = imgGet.getRadarImg("http://www.nmc.cn/publish/radar/qingpu.html")
+            img_data = img_get.get_radar_img("http://www.nmc.cn/publish/radar/qingpu.html")
 
-            imgAnalyzer.setRegion((235,185,330,274))
-            croppedImg = imgAnalyzer.cropImage(imgData)
+            img_analyzer.set_region((235,185,330,274))
+            cropped_img = img_analyzer.crop_image(img_data)
 
-            imgAnalyzer.setRegion((37,32,46,37))
-            croppedImg2 = imgAnalyzer.cropImage(croppedImg)
+            img_analyzer.set_region((37,32,46,37))
+            cropped_img2 = img_analyzer.crop_image(cropped_img)
 
-            result = imgAnalyzer.analysisImage(croppedImg2)
+            result = img_analyzer.analysis_image(cropped_img2)
             print ("Check result: " + result)
 
             if status != result:
@@ -33,8 +33,8 @@ if __name__ == "__main__":
                 string = string + "The weather at Jiangqiao is " + result
                 string = string + ", Right Now"
                 weibo = WeiboPoster()
-                #weibo.postWeibo(string)
-                weibo.postWeiboWithImage(string,imgGet.convertTobBinaryFileStream(imgData,"jpg"))
+                #weibo.post_weibo(string)
+                weibo.post_weibo_with_image(string,img_get.convert_to_binary_file_stream(img_data,"jpg"))
                 status = result
                 
             time.sleep(600)
